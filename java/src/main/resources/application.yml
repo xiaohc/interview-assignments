@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+url:
+  server: 'https://t.hk.uy/'
