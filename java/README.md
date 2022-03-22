@@ -8,7 +8,7 @@
 各大微博推出短网址(short url)，例如：https://t.hk.uy/2hytQxrU ，该需求主要是因为微博有字数限制，长网址制约了用户可输入内容，所以把用户的长网址替换为短网址，当使用这些短网址服务[https://t.hk.uy](https://www.sina.lt/)时，对应服务会自动根据短网址重定向到原网址
 
 > 应用模型如下
-![Image text](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/应用模型.png "应用模型")
+![image](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/应用模型.png)
 
 #### 功能介绍
 
@@ -28,7 +28,7 @@
 #### 架构设计
 
 > 服务架构如下
-![Image text](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/架构图.png "架构图")
+![image](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/架构图.png)
 1.  短域名服务使用单服务实现
 2.  使用REST接口，采用SpringBoot框架，集成Swagger API文档
 3.  性能：4C8G腾讯云服务器标准配置下，1wTPS，平均响应时间5ms，演示项目暂不考虑限流
@@ -54,12 +54,12 @@
 2.  复杂的测试数据（POJO测试输入）使用json文件，这种方式方便测试数据维护和复用，而且单测代码更整洁
 
 > JaCoCo统计单元测试代码覆盖率 
-![Image text](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/jacoco.PNG "jacoco") 
+![image](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/jacoco.PNG) 
 1.  单元测试中排除了Application、POJO类（DTO、config）
 2.  单元测试中排除了lombok注解生成函数（主要是POJO类中使用）
 
 > Pitest统计变异测试率 
-![Image text](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/pitest.PNG "pitest")
+![image](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/pitest.PNG)
 1.  Pitest可以检测单元测试中校验（assert）的充分性
 2.  Pitest最新版本对JUnit5支持还不够完善，需要屏蔽部分assert
 
@@ -70,7 +70,7 @@
     > RAM: 8G
     > OS: win7 64位
 2.  Jmeter模拟 100 用户（长连接），针对 <短域名存储> 接口进行性能测试
-    ![Image text](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/performance-100.PNG "performance-100") 
+    ![image](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/performance-100.PNG) 
 3.  测试时长5分钟，请求次数222w，全部处理成功，平均响应时间13ms，7401TPS
-    ![Image text](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/performance-report-100.PNG "performance-report-100") 
+    ![image](https://github.com/xiaohc/interview-assignments/blob/master/java/doc/images/performance-report-100.PNG) 
 4.  因使用个人电脑进行的性能测试，且测试机和服务器部署在同一台机器上，性能分析可以看到CPU成为主要瓶颈，条件受限，未继续探索内存、IO、网络等瓶颈
